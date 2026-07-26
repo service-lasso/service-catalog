@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://service-lasso.github.io/service-catalog/schemas/service-catalog.schema.json",
+  "title": "Service Lasso Service Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "catalogId",
+    "updatedAt",
+    "versionSource",
+    "defaults",
+    "entries"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "catalogId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "versionSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "releaseFilter"],
+      "properties": {
+        "type": {
+          "const": "github-releases"
+        },
+        "releaseFilter": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["includeDrafts", "includePrereleasesByDefault"],
+          "properties": {
+            "includeDrafts": {
+              "type": "boolean"
+            },
+            "includePrereleasesByDefault": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publisher",
+        "trustStatus",
+        "versionPolicy",
+        "releaseAsset",
+        "manifestPath"
+      ],
+      "properties": {
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trustStatus": {
+          "$ref": "#/$defs/trustStatus"
+        },
+        "versionPolicy": {
+          "$ref": "#/$defs/versionPolicy"
+        },
+        "releaseAsset": {
+          "$ref": "#/$defs/releaseAsset"
+        },
+        "manifestPath": {
+          "$ref": "#/$defs/manifestPath"
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/catalogEntry"
+      }
+    }
+  },
+  "$defs": {
+    "catalogEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packageId",
+        "displayName",
+        "summary",
+        "repository",
+        "category",
+        "tags",
+        "publisher",
+        "trustStatus",
+        "defaultVersionPolicy",
+        "releaseAsset",
+        "manifestPath"
+      ],
+      "properties": {
+        "packageId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository": {
+          "$ref": "#/$defs/githubRepository"
+        },
+        "category": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "tags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trustStatus": {
+          "$ref": "#/$defs/trustStatus"
+        },
+        "defaultVersionPolicy": {
+          "$ref": "#/$defs/versionPolicy"
+        },
+        "releaseAsset": {
+          "$ref": "#/$defs/releaseAsset"
+        },
+        "manifestPath": {
+          "$ref": "#/$defs/manifestPath"
+        }
+      }
+    },
+    "githubRepository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owner", "name", "url"],
+      "properties": {
+        "owner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+$"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+$"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+        }
+      }
+    },
+    "trustStatus": {
+      "type": "string",
+      "enum": ["approved", "experimental", "blocked"]
+    },
+    "versionPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel", "selector", "allowPrerelease"],
+      "properties": {
+        "channel": {
+          "type": "string",
+          "enum": ["stable", "preview"]
+        },
+        "selector": {
+          "type": "string",
+          "enum": ["latest-semver", "latest-release"]
+        },
+        "allowPrerelease": {
+          "type": "boolean"
+        }
+      }
+    },
+    "releaseAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["namePattern", "required"],
+      "properties": {
+        "namePattern": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "manifestPath": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.\\-/]+\\.json$"
+    }
+  }
+}

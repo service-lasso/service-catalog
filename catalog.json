@@ -1,0 +1,221 @@
+{
+  "$schema": "./schemas/service-catalog.schema.json",
+  "schemaVersion": "1.0.0",
+  "catalogId": "service-lasso-approved-services",
+  "updatedAt": "2026-07-26",
+  "versionSource": {
+    "type": "github-releases",
+    "releaseFilter": {
+      "includeDrafts": false,
+      "includePrereleasesByDefault": false
+    }
+  },
+  "defaults": {
+    "publisher": "Service Lasso",
+    "trustStatus": "approved",
+    "versionPolicy": {
+      "channel": "stable",
+      "selector": "latest-semver",
+      "allowPrerelease": false
+    },
+    "releaseAsset": {
+      "namePattern": "^.+\\.zip$",
+      "required": true
+    },
+    "manifestPath": "service.json"
+  },
+  "entries": [
+    {
+      "packageId": "lasso-secretsbroker",
+      "displayName": "Secrets Broker",
+      "summary": "Native local-first secrets broker for Service Lasso workspaces.",
+      "repository": {
+        "owner": "service-lasso",
+        "name": "lasso-secretsbroker",
+        "url": "https://github.com/service-lasso/lasso-secretsbroker"
+      },
+      "category": "security",
+      "tags": ["secrets", "local-first", "core"],
+      "publisher": "Service Lasso",
+      "trustStatus": "approved",
+      "defaultVersionPolicy": {
+        "channel": "stable",
+        "selector": "latest-semver",
+        "allowPrerelease": false
+      },
+      "releaseAsset": {
+        "namePattern": "^lasso-secretsbroker-.+\\.zip$",
+        "required": true
+      },
+      "manifestPath": "service.json"
+    },
+    {
+      "packageId": "lasso-keycloak",
+      "displayName": "Keycloak",
+      "summary": "Release-backed Keycloak identity service for Service Lasso.",
+      "repository": {
+        "owner": "service-lasso",
+        "name": "lasso-keycloak",
+        "url": "https://github.com/service-lasso/lasso-keycloak"
+      },
+      "category": "identity",
+      "tags": ["identity", "auth", "oidc"],
+      "publisher": "Service Lasso",
+      "trustStatus": "approved",
+      "defaultVersionPolicy": {
+        "channel": "stable",
+        "selector": "latest-semver",
+        "allowPrerelease": false
+      },
+      "releaseAsset": {
+        "namePattern": "^lasso-keycloak-.+\\.zip$",
+        "required": true
+      },
+      "manifestPath": "service.json"
+    },
+    {
+      "packageId": "lasso-postgres",
+      "displayName": "Postgres",
+      "summary": "PostgreSQL database service package for Service Lasso.",
+      "repository": {
+        "owner": "service-lasso",
+        "name": "lasso-postgres",
+        "url": "https://github.com/service-lasso/lasso-postgres"
+      },
+      "category": "database",
+      "tags": ["database", "postgres", "storage"],
+      "publisher": "Service Lasso",
+      "trustStatus": "approved",
+      "defaultVersionPolicy": {
+        "channel": "stable",
+        "selector": "latest-semver",
+        "allowPrerelease": false
+      },
+      "releaseAsset": {
+        "namePattern": "^lasso-postgres-.+\\.zip$",
+        "required": true
+      },
+      "manifestPath": "service.json"
+    },
+    {
+      "packageId": "lasso-pgadmin4",
+      "displayName": "pgAdmin 4",
+      "summary": "Release-backed pgAdmin 4 administration service for PostgreSQL.",
+      "repository": {
+        "owner": "service-lasso",
+        "name": "lasso-pgadmin4",
+        "url": "https://github.com/service-lasso/lasso-pgadmin4"
+      },
+      "category": "database",
+      "tags": ["database", "postgres", "admin"],
+      "publisher": "Service Lasso",
+      "trustStatus": "approved",
+      "defaultVersionPolicy": {
+        "channel": "stable",
+        "selector": "latest-semver",
+        "allowPrerelease": false
+      },
+      "releaseAsset": {
+        "namePattern": "^lasso-pgadmin4-.+\\.zip$",
+        "required": true
+      },
+      "manifestPath": "service.json"
+    },
+    {
+      "packageId": "lasso-openobserve",
+      "displayName": "OpenObserve",
+      "summary": "Release-backed observability stack for logs and telemetry.",
+      "repository": {
+        "owner": "service-lasso",
+        "name": "lasso-openobserve",
+        "url": "https://github.com/service-lasso/lasso-openobserve"
+      },
+      "category": "observability",
+      "tags": ["logs", "metrics", "telemetry"],
+      "publisher": "Service Lasso",
+      "trustStatus": "approved",
+      "defaultVersionPolicy": {
+        "channel": "stable",
+        "selector": "latest-semver",
+        "allowPrerelease": false
+      },
+      "releaseAsset": {
+        "namePattern": "^lasso-openobserve-.+\\.zip$",
+        "required": true
+      },
+      "manifestPath": "service.json"
+    },
+    {
+      "packageId": "lasso-dagu",
+      "displayName": "Dagu",
+      "summary": "Workflow orchestration service package for Service Lasso.",
+      "repository": {
+        "owner": "service-lasso",
+        "name": "lasso-dagu",
+        "url": "https://github.com/service-lasso/lasso-dagu"
+      },
+      "category": "automation",
+      "tags": ["workflow", "automation", "scheduler"],
+      "publisher": "Service Lasso",
+      "trustStatus": "approved",
+      "defaultVersionPolicy": {
+        "channel": "stable",
+        "selector": "latest-semver",
+        "allowPrerelease": false
+      },
+      "releaseAsset": {
+        "namePattern": "^lasso-dagu-.+\\.zip$",
+        "required": true
+      },
+      "manifestPath": "service.json"
+    },
+    {
+      "packageId": "lasso-node",
+      "displayName": "Node.js Provider",
+      "summary": "Release-backed Node.js provider package for Service Lasso apps.",
+      "repository": {
+        "owner": "service-lasso",
+        "name": "lasso-node",
+        "url": "https://github.com/service-lasso/lasso-node"
+      },
+      "category": "runtime",
+      "tags": ["nodejs", "runtime", "provider"],
+      "publisher": "Service Lasso",
+      "trustStatus": "approved",
+      "defaultVersionPolicy": {
+        "channel": "stable",
+        "selector": "latest-semver",
+        "allowPrerelease": false
+      },
+      "releaseAsset": {
+        "namePattern": "^lasso-node-.+\\.zip$",
+        "required": true
+      },
+      "manifestPath": "service.json"
+    },
+    {
+      "packageId": "lasso-python",
+      "displayName": "Python Provider",
+      "summary": "Release-backed Python provider package for Service Lasso apps.",
+      "repository": {
+        "owner": "service-lasso",
+        "name": "lasso-python",
+        "url": "https://github.com/service-lasso/lasso-python"
+      },
+      "category": "runtime",
+      "tags": ["python", "runtime", "provider"],
+      "publisher": "Service Lasso",
+      "trustStatus": "approved",
+      "defaultVersionPolicy": {
+        "channel": "stable",
+        "selector": "latest-semver",
+        "allowPrerelease": false
+      },
+      "releaseAsset": {
+        "namePattern": "^lasso-python-.+\\.zip$",
+        "required": true
+      },
+      "manifestPath": "service.json"
+    }
+  ]
+}
