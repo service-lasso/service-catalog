@@ -1,0 +1,10 @@
+{
+  "name": "@service-lasso/service-catalog",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Approved service catalog index for Service Lasso.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-catalog.mjs"
+  }
+}
