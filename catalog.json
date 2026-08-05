@@ -35,11 +35,7 @@
         "url": "https://github.com/service-lasso/lasso-secretsbroker"
       },
       "category": "security",
-      "tags": [
-        "secrets",
-        "local-first",
-        "core"
-      ],
+      "tags": ["secrets", "local-first", "core"],
       "publisher": "Service Lasso",
       "trustStatus": "approved",
       "defaultVersionPolicy": {
@@ -63,11 +59,7 @@
         "url": "https://github.com/service-lasso/lasso-keycloak"
       },
       "category": "identity",
-      "tags": [
-        "identity",
-        "auth",
-        "oidc"
-      ],
+      "tags": ["identity", "auth", "oidc"],
       "publisher": "Service Lasso",
       "trustStatus": "approved",
       "defaultVersionPolicy": {
@@ -91,11 +83,7 @@
         "url": "https://github.com/service-lasso/lasso-postgres"
       },
       "category": "database",
-      "tags": [
-        "database",
-        "postgres",
-        "storage"
-      ],
+      "tags": ["database", "postgres", "storage"],
       "publisher": "Service Lasso",
       "trustStatus": "approved",
       "defaultVersionPolicy": {
@@ -119,11 +107,7 @@
         "url": "https://github.com/service-lasso/lasso-pgadmin4"
       },
       "category": "database",
-      "tags": [
-        "database",
-        "postgres",
-        "admin"
-      ],
+      "tags": ["database", "postgres", "admin"],
       "publisher": "Service Lasso",
       "trustStatus": "approved",
       "defaultVersionPolicy": {
@@ -147,11 +131,7 @@
         "url": "https://github.com/service-lasso/lasso-openobserve"
       },
       "category": "observability",
-      "tags": [
-        "logs",
-        "metrics",
-        "telemetry"
-      ],
+      "tags": ["logs", "metrics", "telemetry"],
       "publisher": "Service Lasso",
       "trustStatus": "approved",
       "defaultVersionPolicy": {
@@ -175,11 +155,7 @@
         "url": "https://github.com/service-lasso/lasso-dagu"
       },
       "category": "automation",
-      "tags": [
-        "workflow",
-        "automation",
-        "scheduler"
-      ],
+      "tags": ["workflow", "automation", "scheduler"],
       "publisher": "Service Lasso",
       "trustStatus": "approved",
       "defaultVersionPolicy": {
@@ -203,12 +179,7 @@
         "url": "https://github.com/service-lasso/lasso-zen-bre"
       },
       "category": "automation",
-      "tags": [
-        "business-rules",
-        "decision-service",
-        "gorules",
-        "jdm"
-      ],
+      "tags": ["business-rules", "decision-service", "gorules", "jdm"],
       "publisher": "Service Lasso",
       "trustStatus": "approved",
       "defaultVersionPolicy": {
@@ -232,11 +203,7 @@
         "url": "https://github.com/service-lasso/lasso-node"
       },
       "category": "runtime",
-      "tags": [
-        "nodejs",
-        "runtime",
-        "provider"
-      ],
+      "tags": ["nodejs", "runtime", "provider"],
       "publisher": "Service Lasso",
       "trustStatus": "approved",
       "defaultVersionPolicy": {
@@ -260,11 +227,7 @@
         "url": "https://github.com/service-lasso/lasso-python"
       },
       "category": "runtime",
-      "tags": [
-        "python",
-        "runtime",
-        "provider"
-      ],
+      "tags": ["python", "runtime", "provider"],
       "publisher": "Service Lasso",
       "trustStatus": "approved",
       "defaultVersionPolicy": {
